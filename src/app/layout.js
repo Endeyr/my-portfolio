@@ -1,6 +1,6 @@
-import Footer from './footer'
+import Footer from '../components/footer'
 import './global.css'
-import Nav from './nav'
+import Nav from '../components/nav'
 import styles from './page.module.css'
 
 export const metadata = {

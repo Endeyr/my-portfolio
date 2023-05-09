@@ -1,4 +1,4 @@
-import styles from './nav.module.css'
+import styles from '../app/nav.module.css'
 
 export default function Nav({ title }) {
 	return (
