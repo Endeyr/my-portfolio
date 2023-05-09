@@ -1,0 +1,230 @@
+/* RESET */
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+input,
+button,
+textarea {
+	font: inherit;
+}
+
+/* TEMP */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	border: var(--TEMP-BORDER);
+}
+
+/* VARIABLES */
+:root {
+	/* FONT */
+	--FF: Verdana, Geneva, Tahoma, sans-serif;
+	--FF-HEADINGS: Tahoma, sans-serif;
+	--FS: clamp(0.75rem, 4vh, 2.5rem);
+	--BUTTON-FS: clamp(0.25rem, 3vh, 1.5rem);
+
+	/* COLORS */
+	--BGCOLOR-FADE: ;
+	--BGCOLOR: hsl(180, 33%, 96%);
+	--BGIMAGE: ;
+	--BORDER-COLOR: ;
+	--BUTTON-COLOR: hsl(180, 33%, 96%);
+	--BUTTON-BGCOLOR: hsl(204, 68%, 29%);
+	--DANGER-COLOR: hsl(0, 80%, 50%);
+	--FONT-COLOR: hsl(204, 68%, 29%);
+	--FONT-COLOR-ALT: hsl(180, 33%, 96%);
+	--HEADER-BGCOLOR: ;
+	--HEADER-COLOR: ;
+	--HERO-BGCOLOR: ;
+	--HERO-COLOR: ;
+	--HIGHLIGHT-COLOR: ;
+	--LINK-ACTIVE: ;
+	--LINK-COLOR: ;
+	--LINK-HOVER: ;
+	--NAV-BGCOLOR: ;
+	--NEUTRAL-COLOR: hsl(180, 7%, 65%);
+	--SUCCESS-COLOR: hsl(240, 80%, 50%);
+	--WARNING-COLOR: hsl(120, 80%, 50%);
+
+	/* BORDERS */
+	--BORDERS: 1px solid var(--BORDER-COLOR);
+	--BORDER-RADIUS: 15px;
+	--TEMP-BORDER: 1px dashed var(--DANGER-COLOR);
+
+	/* STANDARD PADDING */
+	--PADDING-TB: 0.25em;
+	--PADDING-SIDE: 2.5%;
+
+	/* STANDARD MARGIN */
+	--MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--BGCOLOR-FADE: ;
+		--BGCOLOR: hsl(204, 68%, 7%);
+		--BODY-BGCOLOR: ;
+		--BORDER-COLOR: ;
+		--BUTTON-COLOR: hsl(204, 68%, 7%);
+		--BUTTON-BGCOLOR: hsl(180, 33%, 96%);
+		--FONT-COLOR: hsl(180, 33%, 96%);
+		--HEADER-COLOR: ;
+		--HERO-COLOR: ;
+		--HIGHLIGHT-COLOR: ;
+		--LINK-ACTIVE: ;
+		--LINK-COLOR: ;
+		--LINK-HOVER: ;
+		--NAV-BGCOLOR: ;
+	}
+}
+
+/* UTILITY CLASSES */
+.offscreen {
+	position: absolute;
+	left: -10000px;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.center {
+	text-align: center;
+}
+
+/* GENERAL STYLES */
+html {
+	scroll-behavior: smooth;
+	font-size: var(--FS);
+	font-family: var(--FF);
+	background-color: var(--BGCOLOR);
+	background-image: var(--BGIMAGE);
+}
+
+body {
+	background-color: var(--BODY-BGCOLOR);
+	color: var(--FONT-COLOR);
+	min-height: 100vh;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--FF-HEADING);
+	letter-spacing: 0.1em;
+}
+
+h2,
+h3 {
+	margin-bottom: 1em;
+	color: var(--HIGHLIGHT-COLOR);
+}
+
+p {
+	line-height: 1.5;
+}
+
+a:any-link {
+	color: var(--LINK-COLOR);
+}
+
+a:hover,
+a:focus-visible {
+	color: var(--LINK-HOVER);
+}
+
+a:active {
+	color: var(--LINK-ACTIVE);
+}
