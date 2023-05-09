@@ -1,0 +1,11 @@
+/* FOOTER */
+.footer {
+	position: sticky;
+	bottom: 0;
+	background-color: var(--HEADER-BGCOLOR);
+	color: var(--HEADER-COLOR);
+	padding: var(--PADDING-TB) var(--PADDING-SIDE);
+	text-align: center;
+	min-height: 5vh;
+	width: 100%;
+}

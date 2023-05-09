@@ -1,4 +1,6 @@
+import Footer from './footer'
 import './global.css'
+import Nav from './nav'
 import styles from './page.module.css'
 
 export const metadata = {
@@ -9,7 +11,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={styles.page}>{children}</body>
+			<body className={styles.page}>
+				<Nav title={metadata.title} />
+				<main className="main">{children}</main>
+				<Footer />
+			</body>
 		</html>
 	)
 }

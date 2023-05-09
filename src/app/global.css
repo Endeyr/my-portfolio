@@ -187,12 +187,11 @@ html {
 	scroll-behavior: smooth;
 	font-size: var(--FS);
 	font-family: var(--FF);
-	background-color: var(--BGCOLOR);
-	background-image: var(--BGIMAGE);
 }
 
 body {
-	background-color: var(--BODY-BGCOLOR);
+	background-color: var(--BGCOLOR);
+	background-image: var(--BGIMAGE);
 	color: var(--FONT-COLOR);
 	min-height: 100vh;
 	max-width: 100%;
@@ -227,4 +226,31 @@ a:focus-visible {
 
 a:active {
 	color: var(--LINK-ACTIVE);
+}
+
+/* HERO */
+.hero {
+	position: relative;
+}
+
+/* MAIN */
+.main {
+	padding: var(--PADDING-TB) var(--PADDING-SIDE);
+	min-height: 90vh;
+}
+
+.h1 {
+	color: var(--HEADER-COLOR);
+}
+
+.btn {
+	background-color: var(--BUTTON-BGCOLOR);
+	color: var(--BUTTON-COLOR);
+	font-size: var(--BUTTON-FS);
+	font-weight: 900;
+	padding: var(--PADDING-TB) var(--PADDING-SIDE);
+	display: block;
+	border: var(--BORDERS);
+	border-radius: var(--BORDER-RADIUS);
+	cursor: pointer;
 }
