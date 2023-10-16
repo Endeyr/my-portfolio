@@ -14,16 +14,16 @@ const navLinks = [
 	},
 	{
 		title: 'About',
-		path: '/about',
+		path: '/#about',
 	},
 	{
 		title: 'Contact',
-		path: '/contact',
+		path: '/#contact',
 	},
 ]
 
 const Navbar = () => {
-	const [navbarOpen, setNavbarOpen] = useState(false)
+	const [navbarOpen, setNavbarOpen] = useState<boolean>(false)
 
 	const toggle = () => setNavbarOpen(!navbarOpen)
 
