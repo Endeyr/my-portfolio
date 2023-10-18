@@ -1,6 +1,6 @@
 'use client'
 import emailjs from '@emailjs/browser'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Contact() {
 	const [fullname, setFullname] = useState('')
@@ -8,6 +8,8 @@ export default function Contact() {
 	const [subject, setSubject] = useState('')
 	const [message, setMessage] = useState('')
 	const [loading, setLoading] = useState(false)
+	const [notification, setNotification] = useState('')
+	const [error, setError] = useState('')
 
 	useEffect(() => emailjs.init('MJ37X-bMiUefSGN2a'), [])
 
@@ -18,18 +20,23 @@ export default function Contact() {
 		try {
 			setLoading(true)
 			await emailjs.send(serviceId, templateId, {
-				name: fullname,
-				recipient: email,
+				from_name: fullname,
+				from_email: email,
+				subject: subject,
+				message: message,
 			})
-			alert('email successfully sent check inbox')
-		} catch (error) {
-			console.log(error)
+			setNotification('email successfully sent check inbox')
+		} catch (error: any) {
+			setError(error)
 		} finally {
 			setLoading(false)
 			setFullname('')
 			setEmail('')
 			setSubject('')
 			setMessage('')
+			setTimeout(() => {
+				setNotification('')
+			}, 5000)
 		}
 	}
 
@@ -39,6 +46,16 @@ export default function Contact() {
 				<h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold break-words text-center">
 					Contact Me
 				</h2>
+				{notification ? (
+					<h1 className="bg-emerald-500 w-full text-xl my-4 p-4 capitalize text-center">
+						{notification}
+					</h1>
+				) : null}
+				{error ? (
+					<h1 className="bg-red-500 w-full text-xl my-4 p-4 capitalize text-center">
+						{error}
+					</h1>
+				) : null}
 				<label
 					htmlFor="fullname"
 					className="dark:text-[#ADB7BE] text-base mt-4 sm:text-lg lg:text-xl"
@@ -48,7 +65,7 @@ export default function Contact() {
 				<input
 					type="text"
 					name="fullname"
-					className="dark:text-black rounded-lg"
+					className="dark:text-slate-100 rounded-lg dark:bg-slate-700"
 					value={fullname}
 					onChange={(e) => {
 						setFullname(e.target.value)
@@ -64,7 +81,7 @@ export default function Contact() {
 				<input
 					type="email"
 					name="email"
-					className="dark:text-black rounded-lg"
+					className="dark:text-slate-100 rounded-lg dark:bg-slate-700"
 					value={email}
 					onChange={(e) => {
 						setEmail(e.target.value)
@@ -80,7 +97,7 @@ export default function Contact() {
 				<input
 					type="text"
 					name="subject"
-					className="dark:text-black rounded-lg"
+					className="dark:text-slate-100 rounded-lg dark:bg-slate-700"
 					value={subject}
 					onChange={(e) => {
 						setSubject(e.target.value)
@@ -95,7 +112,7 @@ export default function Contact() {
 				</label>
 				<textarea
 					name="message"
-					className="dark:text-black rounded-lg h-20"
+					className="dark:text-slate-100 rounded-lg dark:bg-slate-700 h-20"
 					value={message}
 					onChange={(e) => {
 						setMessage(e.target.value)
@@ -107,7 +124,7 @@ export default function Contact() {
 						disabled={loading}
 						className="px-6 py-4 mt-4 w-full sm:w-fit rounded-full bg-transparent border-2 border-black hover:bg-secondary-300 active:bg-secondary-800 dark:hover:bg-secondary-300 dark:hover:text-black dark:active:bg-secondary-800 dark:active:text-black dark:text-white  dark:border-white"
 					>
-						Send
+						Send Message
 					</button>
 				</div>
 			</form>

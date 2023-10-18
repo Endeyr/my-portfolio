@@ -85,7 +85,7 @@ const About = () => {
 						libero, dolorum alias quaerat earum error perferendis ratione
 						excepturi? Ab, laborum.
 					</p>
-					<div className="flex flex-row justify-start mt-8">
+					<div className="flex flex-row justify-start mt-8 ">
 						<TabButton
 							active={tab === 'Skills'}
 							selectTab={() => handleTabChange('Skills')}

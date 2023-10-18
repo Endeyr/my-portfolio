@@ -8,13 +8,13 @@ const TabButton = ({
 	children: React.ReactNode | React.ReactNode[]
 }) => {
 	const buttonClasses = active
-		? 'text-blue-50 border-b border-b-blue-500'
-		: 'text-white/70'
+		? 'dark:text-blue-50 border-b border-b-blue-500'
+		: 'dark:text-white/70 text-black/70'
 	return (
 		<>
 			<button onClick={selectTab}>
 				<p
-					className={`mr-3 font-semibold hover:text-white/50 cursor-pointer ${buttonClasses}`}
+					className={`mr-3 font-semibold hover:text-black/50 dark:hover:text-white/50 cursor-pointer ${buttonClasses}`}
 				>
 					{children}
 				</p>
