@@ -18,20 +18,43 @@ const PROJECTS_DATA: projectsData[] = [
 	{
 		id: 1,
 		title: 'Pokecards',
-		description: 'Project 1 description',
+		description:
+			'A web application built with Django, Python, and JavaScript. It allows users to build and manage their Pokémon trading card collections online.',
 		image: '/projects/pokecards.png',
 		tag: ['All', 'Personal'],
-		gitUrl: '/',
-		previewUrl: '/',
+		gitUrl: 'https://github.com/Endeyr/pokecardsV2',
+		previewUrl: 'https://pokecards.onrender.com/',
 	},
 	{
 		id: 2,
 		title: 'Spotify API',
-		description: 'Project 2 description',
+		description:
+			'This is a web application that allows users to search for Spotify artists and see their top songs, albums, and related artists. It uses the Spotify Web API to fetch the artist information and render it on the web page using Jinja2 templates, Flask, and Python.',
 		image: '/projects/spotifyAPI.png',
 		tag: ['All', 'Personal'],
-		gitUrl: '/',
-		previewUrl: '/',
+		gitUrl:
+			'https://github.com/Endeyr/cs50-final-project-music-discovery?tab=readme-ov-file',
+		previewUrl: 'https://youtu.be/1iY3AhAjE50',
+	},
+	{
+		id: 3,
+		title: 'Breakout',
+		description:
+			'A classic Breakout game implemented in JavaScript. Breakout is a timeless arcade game where the player controls a paddle to bounce a ball, breaking bricks in the process.',
+		image: '/projects/breakout.png',
+		tag: ['All', 'Personal'],
+		gitUrl: 'https://github.com/Endeyr/breakout-game',
+		previewUrl: 'https://endeyr.itch.io/breakout',
+	},
+	{
+		id: 4,
+		title: "Apollo's Rescue",
+		description:
+			'A basic website platform tailored for small businesses to establish their online presence quickly and affordably. The platform offers essential features to showcase products, services, and contact information, helping small businesses attract customers and increase sales.',
+		image: '/projects/nonprofit.jpg',
+		tag: ['All', 'Personal'],
+		gitUrl: 'https://github.com/Endeyr/small-business-webpage',
+		previewUrl: 'https://non-profit-webpage.vercel.app/',
 	},
 ]
 
@@ -66,13 +89,13 @@ const Dashboard = () => {
 					}}
 					isSelected={tag === 'Personal'}
 				/>
-				<ProjectTag
+				{/* <ProjectTag
 					name={'Open Source'}
 					onClick={() => {
 						handleTagChange('Open Source')
 					}}
 					isSelected={tag === 'Open Source'}
-				/>
+				/> */}
 			</div>
 			<div className="grid sm:grid-cols-3 gap-8 sm:gap-12 mx-4 sm:mx-2">
 				{filteredProjects.map((project) => (
