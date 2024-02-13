@@ -1,6 +1,6 @@
 import HeroButton from '@/components/hero/button'
+import profilePicture from '@/public/pfp.jpg'
 import Image from 'next/image'
-import profilePicture from '../../../public/pfp.jpg'
 
 const Hero = () => {
 	return (
@@ -11,10 +11,11 @@ const Hero = () => {
 						Hello, I&apos;m Aaron
 					</h1>
 					<p className="dark:text-[#ADB7BE] text-lg mb-4 sm:text-xl lg:text-2xl break-words">
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
-						possimus recusandae deleniti cum nobis temporibus? Corporis
-						obcaecati eum at assumenda, et ipsam nostrum reiciendis. Atque
-						tenetur autem nobis numquam similique!
+						Innovative web and systems developer eager to translate 2 years of
+						building interactive apps into flexible, responsive web experiences.
+						Skilled in HTML5, CSS3, JS, Typescript, React & Next.js. Thrives in
+						collaborative teams, committed to improvement, and seeks growth in a
+						dynamic company.
 					</p>
 					<div>
 						<HeroButton />

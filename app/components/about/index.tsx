@@ -20,9 +20,10 @@ const TAB_DATA: TabData[] = [
 				<li>Node.js</li>
 				<li>React</li>
 				<li>Javascript</li>
+				<li>Typescript</li>
 				<li>Python</li>
 				<li>Django</li>
-				<li>Jinja</li>
+				<li>Next.js</li>
 			</ul>
 		),
 	},
@@ -42,25 +43,25 @@ const TAB_DATA: TabData[] = [
 		id: 'Experience',
 		content: (
 			<ul className="list-disc pl-2">
-				<li className="cursor-pointer">Project 1</li>
-				<li className="cursor-pointer">Project 2</li>
-				<li className="cursor-pointer">Project 3</li>
-				<li className="cursor-pointer">Project 4</li>
+				<li className="cursor-pointer">Pokecards</li>
+				<li className="cursor-pointer">Spotify API</li>
+				<li className="cursor-pointer">Breakout</li>
+				<li className="cursor-pointer">Non-Profit Website</li>
 			</ul>
 		),
 	},
-	{
-		title: 'Contributions',
-		id: 'Contributions',
-		content: (
-			<ul className="list-disc pl-2">
-				<li className="cursor-pointer">Project X</li>
-				<li className="cursor-pointer">Project Y</li>
-				<li className="cursor-pointer">Project Z</li>
-				<li className="cursor-pointer">Project G</li>
-			</ul>
-		),
-	},
+	// {
+	// 	title: 'Contributions',
+	// 	id: 'Contributions',
+	// 	content: (
+	// 		<ul className="list-disc pl-2">
+	// 			<li className="cursor-pointer">Project X</li>
+	// 			<li className="cursor-pointer">Project Y</li>
+	// 			<li className="cursor-pointer">Project Z</li>
+	// 			<li className="cursor-pointer">Project G</li>
+	// 		</ul>
+	// 	),
+	// },
 ]
 const About = () => {
 	const [tab, setTab] = useState<string>('Skills')
@@ -80,10 +81,7 @@ const About = () => {
 						About Me
 					</h2>
 					<p className="dark:text-[#ADB7BE] text-base mb-4 sm:text-lg lg:text-xl break-words">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
-						voluptatem a eveniet non nulla voluptas tenetur eaque cumque, eos
-						libero, dolorum alias quaerat earum error perferendis ratione
-						excepturi? Ab, laborum.
+						I&apos;m passionate about crafting user-friendly and visually appealing websites. 
 					</p>
 					<div className="flex flex-row justify-start mt-8 ">
 						<TabButton
@@ -107,13 +105,13 @@ const About = () => {
 							{' '}
 							Experience{' '}
 						</TabButton>
-						<TabButton
+						{/* <TabButton
 							active={tab === 'Contributions'}
 							selectTab={() => handleTabChange('Contributions')}
 						>
 							{' '}
 							Contributions{' '}
-						</TabButton>
+						</TabButton> */}
 					</div>
 					<div className="mt-8 h-[100px]">
 						{TAB_DATA.find((t) => t.id === tab)?.content ?? (
